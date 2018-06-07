@@ -1,0 +1,29 @@
+{
+    "name": "ah-timers",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AdrienHeisch/Timers.git"
+    },
+    "author": "Adrien Heisch",
+    "bugs": {
+        "url": "https://github.com/AdrienHeisch/Timers/issues"
+    },
+    "homepage": "https://github.com/AdrienHeisch/Timers#readme",
+    "scripts": {
+        "start": "webpack -d",
+        "build": "webpack -p"
+    },
+    "dependencies": {
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "html-webpack-plugin": "^3.2.0",
+        "webpack": "^4.11.0",
+        "webpack-cli": "^3.0.2"
+    }
+}
