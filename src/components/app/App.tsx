@@ -27,13 +27,14 @@ export default class App extends React.Component<IAppProps, IAppState> {
 
     public render ():JSX.Element {
         return (
-            <React.Fragment>
+            <>
                 {
                     this.categories.map(
                         (pProps:ICategoryProps) => 
                         <Category key={ pProps.name } {...pProps} />
                     )
                 }
+                
                 <div className={ styles.addCategoryButton }>
                     <Button
                         variant='fab'
@@ -60,7 +61,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
                         </Button>
                     </DialogActions>
                 </Dialog>
-            </React.Fragment>
+            </>
         );
     }
 

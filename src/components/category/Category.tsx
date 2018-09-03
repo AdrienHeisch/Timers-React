@@ -11,7 +11,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import Timer, { ITimerProps } from '../time/Timer';
 export default class Category extends React.Component<ICategoryProps, ICategoryState> {
 
-    private timers:Array<ICategoryProps> = [];
+    private timers:Array<ITimerProps> = [];
 
     constructor (pProps:ICategoryProps) {
         super(pProps);
@@ -95,39 +95,6 @@ export default class Category extends React.Component<ICategoryProps, ICategoryS
                                     </Button>
                                 </DialogActions>
                             </Dialog>
-                            {/*
-                            <MenuItem onClick={ () => this.setState({ resetDialog: true }) }><ReplayIcon />  Reset</MenuItem>
-                            <Dialog
-                                open={ this.state.resetDialog }
-                                onClose={ () => this.closeControls() }
-                            >
-                                <DialogTitle>Reset this timer ?</DialogTitle>
-                                <DialogActions>
-                                    <Button onClick={ () => this.closeControls() } color="primary">
-                                        Cancel
-                                    </Button>
-                                    <Button onClick={ () => { this.timer.reset(); this.closeControls(); } } color="primary" autoFocus>
-                                        Ok
-                                    </Button>
-                                </DialogActions>
-                            </Dialog>
-                            
-                            <MenuItem onClick={ () => this.setState({ removeDialog: true }) }><RemoveIcon />  Remove</MenuItem>
-                            <Dialog
-                                open={ this.state.removeDialog }
-                                onClose={ () => this.closeControls() }
-                            >
-                                <DialogTitle>Remove this timer ?</DialogTitle>
-                                <DialogActions>
-                                    <Button onClick={ () => this.closeControls() } color="primary">
-                                        Cancel
-                                    </Button>
-                                    <Button onClick={ () => { this.closeControls(); this.delete(); } } color="primary" autoFocus>
-                                        Ok
-                                    </Button>
-                                </DialogActions>
-                            </Dialog>
-                            */}
                         </Menu>
                     </span>
                 </ExpansionPanelSummary>

@@ -42,7 +42,8 @@ export default class Timer extends React.Component<ITimerProps, ITimerState> {
             removeDialog: false,
             timeInput: 0,
             nameInput: '',
-            nameDialog: false
+            nameDialog: false,
+            toBeDeleted: false
         }
     }
 
@@ -61,6 +62,7 @@ export default class Timer extends React.Component<ITimerProps, ITimerState> {
     private closeControls ():void {
         this.setState({
             controlsMenuAnchor: undefined,
+            nameDialog: false,
             goalDialog: false,
             resetDialog: false,
             removeDialog: false
@@ -69,6 +71,7 @@ export default class Timer extends React.Component<ITimerProps, ITimerState> {
 
     public delete ():void {
         Timer.list.splice(Timer.list.indexOf(this), 1);
+        this.setState({ toBeDeleted: true });
     }
 
     public render ():JSX.Element {
@@ -151,7 +154,7 @@ export default class Timer extends React.Component<ITimerProps, ITimerState> {
                                 </DialogActions>
                             </Dialog>
                             
-                            <MenuItem onClick={ () => this.setState({ removeDialog: true }) }><RemoveIcon />  Remove</MenuItem>
+                            <MenuItem onClick={ () => this.setState({ removeDialog: true }) }><RemoveIcon />  [WIP] Remove</MenuItem>
                             <Dialog
                                 open={ this.state.removeDialog }
                                 onClose={ () => this.closeControls() }
@@ -200,4 +203,5 @@ interface ITimerState {
     timeInput:number;
     nameInput:string;
     nameDialog:boolean;
+    toBeDeleted:boolean;
 }
