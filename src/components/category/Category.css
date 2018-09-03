@@ -1,0 +1,20 @@
+@value card-width from '../time/Timer.css';
+
+.name {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 1.2em !important;
+}
+
+.controls {
+    position: absolute;
+    right: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(card-width, 1fr));
+}

@@ -1,0 +1,16 @@
+import * as React from 'react';
+
+export default class ListedComponent<T, S> extends React.Component<T, S> {
+
+    public static list:Array<ListedComponent<any, any>> = [];
+
+    constructor (pProps:T) {
+        super(pProps);
+        ListedComponent.list.push(this);
+    }
+
+    public delete ():void {
+        ListedComponent.list.splice(ListedComponent.list.indexOf(this), 1);
+    }
+
+}

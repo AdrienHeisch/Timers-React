@@ -1,0 +1,42 @@
+import * as React from 'react';
+import { Button, Dialog } from '@material-ui/core';
+
+import Category from './../category/Category';
+import Time from './../time/Time';
+import { DialogProps } from '@material-ui/core/Dialog';
+
+export default class ConfirmationDialog extends React.Component<DialogProps> {
+
+    constructor (pProps:IConfirmationDialogProps) {
+        super(pProps);
+    }
+/*
+    private createCategory() {
+        
+    }
+
+    public render ():JSX.Element {
+        return (
+        <Dialog
+            open={ this.state.removeDialog }
+            onClose={ () => this.closeControls() }
+        >
+            <DialogTitle>Remove this timer ?</DialogTitle>
+            <DialogActions>
+                <Button onClick={ () => this.closeControls() } color="primary">
+                    Cancel
+                </Button>
+                <Button onClick={ () => { this.closeControls(); this.delete(); } } color="primary" autoFocus>
+                    Ok
+                </Button>
+            </DialogActions>
+        </Dialog>
+        );
+    }
+*/
+}
+
+interface IConfirmationDialogProps extends DialogProps {
+    title:string;
+    content:string;
+}

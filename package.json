@@ -10,20 +10,39 @@
     },
     "homepage": "https://github.com/AdrienHeisch/Timers#readme",
     "scripts": {
-        "start": "webpack -d",
-        "build": "webpack -p"
+        "watch": "tcm -w src",
+        "start": "npm run build && npm run open",
+        "open": "start chrome file:///D:/Dev/Web/Timers-React/dist/index.html",
+        "serve": "http-server ./dist/",
+        "build": "tcm src && webpack -d",
+        "build-prod": "tcm src && webpack -p",
+        "deploy": "npm run build-prod && gh-pages -d dist"
     },
     "dependencies": {
+        "@material-ui/core": "^1.2.0",
+        "@material-ui/icons": "^1.1.0",
         "react": "^16.4.0",
         "react-dom": "^16.4.0"
     },
     "devDependencies": {
+        "@types/react": "^16.3.16",
+        "@types/react-dom": "^16.0.6",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.4",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
-        "html-webpack-plugin": "^3.2.0",
+        "copy-webpack-plugin": "^4.5.1",
+        "css-loader": "^0.28.11",
+        "fork-ts-checker-webpack-plugin": "^0.4.2",
+        "gh-pages": "^1.2.0",
+        "material-ui-time-picker": "^1.0.0",
+        "style-loader": "^0.21.0",
+        "ts-loader": "^4.3.1",
+        "typed-css-modules": "^0.3.4",
+        "typescript": "^2.8.3",
+        "typings-for-css-modules-loader": "^1.7.0",
         "webpack": "^4.11.0",
+        "webpack-bundle-analyzer": "^2.13.1",
         "webpack-cli": "^3.0.2"
     }
 }
